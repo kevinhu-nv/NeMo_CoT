@@ -1,0 +1,23 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1]
+
+  | Name            | Type                                   | Params
+---------------------------------------------------------------------------
+0 | frozen_model    | MegatronNMTModel                       | 1.2 B 
+1 | word_embeddings | VocabParallelEmbedding                 | 82.1 M
+2 | val_metric      | ModuleList                             | 0     
+3 | perception      | AudioPerceptionModule                  | 646 M 
+4 | model           | MegatronTokenLevelEncoderDecoderModule | 1.2 B 
+---------------------------------------------------------------------------
+1.9 B     Trainable params
+0         Non-trainable params
+1.9 B     Total params
+7,540.015 Total estimated model params size (MB)

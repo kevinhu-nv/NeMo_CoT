@@ -1,0 +1,22 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 2 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1]
+
+  | Name                  | Type                             | Params
+---------------------------------------------------------------------------
+0 | model                 | GPTModel                         | 550 M 
+1 | val_metric            | ModuleList                       | 0     
+2 | perception            | AudioPerceptionModule            | 661 M 
+3 | perception_cross_attn | ProjectTransformerCrossAttention | 23.1 M
+---------------------------------------------------------------------------
+1.2 B     Trainable params
+0         Non-trainable params
+1.2 B     Total params
+4,938.326 Total estimated model params size (MB)

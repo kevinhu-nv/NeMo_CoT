@@ -1,0 +1,306 @@
+[NeMo W 2024-05-01 08:16:44 nemo_logging:349] /usr/local/lib/python3.10/dist-packages/hydra/_internal/hydra.py:119: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+    See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+      ret = run_job(
+    
+[NeMo W 2024-05-01 08:16:44 nemo_logging:349] /usr/local/lib/python3.10/dist-packages/pytorch_lightning/_graveyard/precision.py:49: The `MixedPrecisionPlugin` is deprecated. Use `pytorch_lightning.plugins.precision.MixedPrecision` instead.
+    
+[NeMo W 2024-05-01 08:16:44 exp_manager:779] No version folders would be created under the log folder as 'resume_if_exists' is enabled.
+[NeMo W 2024-05-01 08:16:44 exp_manager:636] There were no checkpoints found in checkpoint_dir or no checkpoint folder at checkpoint_dir :/media/zhehuaic_works/mod_speech_llm/NeMo_merge/examples/multimodal/NeMo_experiments/nemo_experiments/megatron_audio_gpt_peft/checkpoints. Training from scratch.
+[NeMo W 2024-05-01 08:16:44 exp_manager:972] The checkpoint callback was told to monitor a validation value and trainer's max_steps was set to 1000000. Please ensure that max_steps will run for at least 1 epochs to ensure that checkpointing will not error out.
+[NeMo W 2024-05-01 08:16:47 modelPT:165] If you intend to do training or fine-tuning, please call the ModelPT.setup_training_data() method and provide a valid configuration file to setup the train data loader.
+    Train config : 
+    tarred_audio_filepaths: null
+    manifest_filepath: null
+    sample_rate: 16000
+    shuffle: true
+    batch_size: null
+    num_workers: 8
+    use_lhotse: true
+    max_duration: 40
+    pin_memory: true
+    use_bucketing: false
+    bucket_duration_bins: null
+    num_buckets: 1
+    text_field: answer
+    lang_field: target_lang
+    batch_duration: 360
+    quadratic_duration: 15
+    bucket_buffer_size: 20000
+    shuffle_buffer_size: 10000
+    
+[NeMo W 2024-05-01 08:16:47 modelPT:172] If you intend to do validation, please call the ModelPT.setup_validation_data() or ModelPT.setup_multiple_validation_data() method and provide a valid configuration file to setup the validation data loader(s). 
+    Validation config : 
+    manifest_filepath: null
+    sample_rate: 16000
+    batch_size: 8
+    shuffle: false
+    num_workers: 0
+    pin_memory: true
+    tarred_audio_filepaths: null
+    use_lhotse: true
+    text_field: answer
+    lang_field: target_lang
+    use_bucketing: false
+    
+[NeMo W 2024-05-01 08:16:47 modelPT:178] Please call the ModelPT.setup_test_data() or ModelPT.setup_multiple_test_data() method and provide a valid configuration file to setup the test data loader(s).
+    Test config : 
+    manifest_filepath: null
+    sample_rate: 16000
+    batch_size: 32
+    shuffle: false
+    num_workers: 0
+    pin_memory: true
+    tarred_audio_filepaths: null
+    use_lhotse: true
+    text_field: answer
+    lang_field: target_lang
+    use_bucketing: false
+    
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: context_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: expert_model_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_overlap in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_wgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_dgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: finalize_model_grads_func in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: pipeline_model_parallel_split_rank in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_num_layers in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: _cpu_offloading_context in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_activations in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_weights in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: barrier_with_L1_time in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: context_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: expert_model_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_overlap in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_wgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_dgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: finalize_model_grads_func in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: pipeline_model_parallel_split_rank in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_num_layers in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: _cpu_offloading_context in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_activations in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_weights in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: barrier_with_L1_time in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: context_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: expert_model_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_overlap in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_wgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_dgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: finalize_model_grads_func in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: pipeline_model_parallel_split_rank in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_num_layers in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: _cpu_offloading_context in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_activations in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_weights in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: barrier_with_L1_time in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: context_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: expert_model_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_overlap in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_wgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_dgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: finalize_model_grads_func in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: pipeline_model_parallel_split_rank in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_num_layers in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: _cpu_offloading_context in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_activations in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_weights in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: barrier_with_L1_time in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: context_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: expert_model_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_overlap in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_wgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_dgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: finalize_model_grads_func in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: pipeline_model_parallel_split_rank in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_num_layers in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: _cpu_offloading_context in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_activations in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_weights in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: barrier_with_L1_time in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: num_moe_experts in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: window_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: memory_efficient_layer_norm in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: fp8_wgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: clone_scatter_output_in_embedding in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: moe_router_load_balancing_type in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: moe_router_topk in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: moe_grouped_gemm in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: moe_aux_loss_coeff in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: moe_z_loss_coeff in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: moe_input_jitter_eps in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: moe_token_dropping in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 megatron_base_model:593] The model: CrossAttendModularAudioGPTModel() does not have field.name: rotary_percent in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:16:58 nemo_logging:349] /usr/local/lib/python3.10/dist-packages/transformer_engine/pytorch/module/base.py:611: UserWarning: To guarantee overlapping TP and SP collectives with the backwardGEMMs, set environment variable CUDA_DEVICE_MAX_CONNECTIONS = 1
+      warnings.warn(
+    
+[NeMo W 2024-05-01 08:17:03 modelPT:165] If you intend to do training or fine-tuning, please call the ModelPT.setup_training_data() method and provide a valid configuration file to setup the train data loader.
+    Train config : 
+    tarred_audio_filepaths: null
+    manifest_filepath: null
+    sample_rate: 16000
+    shuffle: true
+    batch_size: null
+    num_workers: 8
+    use_lhotse: true
+    max_duration: 40
+    pin_memory: true
+    use_bucketing: false
+    bucket_duration_bins: null
+    num_buckets: 1
+    text_field: answer
+    lang_field: target_lang
+    batch_duration: 360
+    quadratic_duration: 15
+    bucket_buffer_size: 20000
+    shuffle_buffer_size: 10000
+    
+[NeMo W 2024-05-01 08:17:03 modelPT:172] If you intend to do validation, please call the ModelPT.setup_validation_data() or ModelPT.setup_multiple_validation_data() method and provide a valid configuration file to setup the validation data loader(s). 
+    Validation config : 
+    manifest_filepath: null
+    sample_rate: 16000
+    batch_size: 8
+    shuffle: false
+    num_workers: 0
+    pin_memory: true
+    tarred_audio_filepaths: null
+    use_lhotse: true
+    text_field: answer
+    lang_field: target_lang
+    use_bucketing: false
+    
+[NeMo W 2024-05-01 08:17:03 modelPT:178] Please call the ModelPT.setup_test_data() or ModelPT.setup_multiple_test_data() method and provide a valid configuration file to setup the test data loader(s).
+    Test config : 
+    manifest_filepath: null
+    sample_rate: 16000
+    batch_size: 32
+    shuffle: false
+    num_workers: 0
+    pin_memory: true
+    tarred_audio_filepaths: null
+    use_lhotse: true
+    text_field: answer
+    lang_field: target_lang
+    use_bucketing: false
+    
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: context_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: expert_model_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_overlap in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_wgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_dgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: finalize_model_grads_func in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: pipeline_model_parallel_split_rank in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_num_layers in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: _cpu_offloading_context in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_activations in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_weights in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: barrier_with_L1_time in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: context_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: expert_model_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_overlap in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_wgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_dgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: finalize_model_grads_func in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: pipeline_model_parallel_split_rank in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_num_layers in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: _cpu_offloading_context in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_activations in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_weights in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: barrier_with_L1_time in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: context_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: expert_model_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_overlap in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_wgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_dgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: finalize_model_grads_func in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: pipeline_model_parallel_split_rank in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_num_layers in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: _cpu_offloading_context in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_activations in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_weights in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: barrier_with_L1_time in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: context_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: expert_model_parallel_size in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_overlap in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_ag in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_split_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_atomic_rs in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_wgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: tp_comm_bulk_dgrad in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: finalize_model_grads_func in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: pipeline_model_parallel_split_rank in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_num_layers in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: _cpu_offloading_context in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_activations in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: cpu_offloading_weights in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo W 2024-05-01 08:17:07 megatron_base_model:1213] The model: CrossAttendModularAudioGPTModel() does not have field.name: barrier_with_L1_time in its cfg. Add this key to cfg or config_mapping to make to make it configurable.
+[NeMo E 2024-05-01 08:17:07 common:523] Model instantiation failed!
+    Target class:	nemo.collections.multimodal.speech_llm.models.modular_models.CrossAttendModularAudioGPTModel
+    Error(s):	[Errno 2] No such file or directory: '/tmp/tmpfg5apntl/mp_rank_00/model_weights.ckpt'
+    Traceback (most recent call last):
+      File "/workspace/nemo/works/zhehuaic_works/mod_speech_llm/NeMo_merge/nemo/core/classes/common.py", line 502, in from_config_dict
+        instance = imported_cls(cfg=config, trainer=trainer)
+      File "/workspace/nemo/works/zhehuaic_works/mod_speech_llm/NeMo_merge/nemo/collections/multimodal/speech_llm/models/modular_models.py", line 103, in __init__
+        self.setup_perception_modules(cfg)
+      File "/workspace/nemo/works/zhehuaic_works/mod_speech_llm/NeMo_merge/nemo/collections/multimodal/speech_llm/models/modular_models.py", line 1477, in setup_perception_modules
+        super().setup_perception_modules(cfg)
+      File "/workspace/nemo/works/zhehuaic_works/mod_speech_llm/NeMo_merge/nemo/collections/multimodal/speech_llm/models/modular_models.py", line 97, in setup_perception_modules
+        audio_model, _ = self.get_audio_encoder_models_and_configs(cfg)
+      File "/workspace/nemo/works/zhehuaic_works/mod_speech_llm/NeMo_merge/nemo/collections/multimodal/speech_llm/models/modular_models.py", line 835, in get_audio_encoder_models_and_configs
+        audio_model = model_class.restore_from(pretrained_audio_model, map_location='cpu')
+      File "/workspace/nemo/works/zhehuaic_works/mod_speech_llm/NeMo_merge/nemo/core/classes/modelPT.py", line 450, in restore_from
+        instance = cls._save_restore_connector.restore_from(
+      File "/workspace/nemo/works/zhehuaic_works/mod_speech_llm/NeMo_merge/nemo/core/connectors/save_restore_connector.py", line 255, in restore_from
+        loaded_params = self.load_config_and_state_dict(
+      File "/workspace/nemo/works/zhehuaic_works/mod_speech_llm/NeMo_merge/nemo/core/connectors/save_restore_connector.py", line 183, in load_config_and_state_dict
+        state_dict = self._load_state_dict_from_disk(model_weights, map_location=map_location)
+      File "/workspace/nemo/works/zhehuaic_works/mod_speech_llm/NeMo_merge/nemo/core/connectors/save_restore_connector.py", line 585, in _load_state_dict_from_disk
+        return torch.load(model_weights, map_location='cpu')
+      File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 996, in load
+        with _open_file_like(f, 'rb') as opened_file:
+      File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 445, in _open_file_like
+        return _open_file(name_or_buffer, mode)
+      File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 426, in __init__
+        super().__init__(open(name, mode))
+    FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmpfg5apntl/mp_rank_00/model_weights.ckpt'
+    

@@ -1,0 +1,379 @@
+cfg:
+  mcore_gpt: true
+  micro_batch_size: 2
+  global_batch_size: 2
+  tensor_model_parallel_size: 2
+  pipeline_model_parallel_size: 1
+  virtual_pipeline_model_parallel_size: null
+  encoder_seq_length: 2048
+  max_position_embeddings: 2048
+  num_layers: 22
+  hidden_size: 2048
+  ffn_hidden_size: 5632
+  num_attention_heads: 32
+  init_method_std: 0.02
+  use_scaled_init_method: true
+  hidden_dropout: 0.0
+  attention_dropout: 0.0
+  ffn_dropout: 0.0
+  kv_channels: null
+  apply_query_key_layer_scaling: true
+  normalization: rmsnorm
+  layernorm_epsilon: 1.0e-05
+  do_layer_norm_weight_decay: false
+  make_vocab_size_divisible_by: 128
+  pre_process: true
+  post_process: true
+  persist_layer_norm: true
+  bias: false
+  activation: fast-swiglu
+  headscale: false
+  transformer_block_type: pre_ln
+  openai_gelu: false
+  normalize_attention_scores: true
+  position_embedding_type: rope
+  rotary_percentage: 1.0
+  attention_type: multihead
+  share_embeddings_and_output_weights: false
+  overlap_p2p_comm: false
+  batch_p2p_comm: true
+  num_query_groups: 4
+  tokenizer:
+    library: sentencepiece
+    type: null
+    model: nemo:1e8ea0ffc9ce4c8bb0a95fb035206648_tokenizer.model
+    vocab_file: null
+    merge_file: null
+    delimiter: null
+    sentencepiece_legacy: false
+    tokenizer_model: nemo:3dcb25544389488b84c80683dd6c1ecc_tokenizer.model
+  native_amp_init_scale: 4294967296
+  native_amp_growth_interval: 1000
+  hysteresis: 2
+  fp32_residual_connection: false
+  fp16_lm_cross_entropy: false
+  megatron_amp_O2: false
+  grad_allreduce_chunk_size_mb: 125
+  grad_div_ar_fusion: true
+  gradient_accumulation_fusion: false
+  bias_activation_fusion: false
+  bias_dropout_add_fusion: false
+  masked_softmax_fusion: true
+  get_attention_mask_from_fusion: true
+  seed: 1234
+  resume_from_checkpoint: null
+  use_cpu_initialization: false
+  onnx_safe: false
+  apex_transformer_log_level: 30
+  gradient_as_bucket_view: false
+  sync_batch_comm: false
+  activations_checkpoint_granularity: null
+  activations_checkpoint_method: null
+  activations_checkpoint_num_layers: null
+  num_micro_batches_with_partial_activation_checkpoints: null
+  activations_checkpoint_layers_per_pipeline: null
+  sequence_parallel: false
+  transformer_engine: true
+  fp8: false
+  fp8_e4m3: false
+  fp8_hybrid: true
+  fp8_margin: 0
+  fp8_interval: 1
+  fp8_amax_history_len: 1024
+  fp8_amax_compute_algo: max
+  reduce_amax: true
+  use_emha: false
+  data:
+    end_string: '[EOG]'
+    train_ds:
+      manifest_filepath:
+      - - /media/data/datasets/LibriSpeech/dev_clean_10.json
+        - 1
+      - - /media/data/datasets/LibriSpeech/dev_clean_10.json
+        - 1
+      global_batch_size: 2
+      micro_batch_size: 2
+      shuffle: true
+      num_workers: 0
+      pin_memory: true
+      max_seq_length: 2048
+      min_seq_length: 1
+      drop_last: true
+      concat_sampling_probabilities: null
+      context_key: input
+      label_key: output
+      add_eos: true
+      end_string: '[EOG]'
+      add_sep: false
+      add_bos: true
+      separate_prompt_and_response_with_newline: false
+      truncation_field: context
+      index_mapping_dir: null
+      prompt_template: '[INST]
+
+        <<SYS>>
+
+        Please answer the following based on the previous speech feature.
+
+        <</SYS>>
+
+
+        {input}[/INST] {output}'
+      sample_rate: 16000
+      max_duration: 24
+      min_duration: 0.1
+      is_tarred: false
+      tarred_audio_filepaths: null
+      shuffle_n: 2048
+      bucketing_strategy: fully_randomized
+      bucketing_batch_size: null
+      use_lhotse: true
+      duration_bins:
+      - 2
+      - 4
+      - 6
+      - 8
+      - 10
+      - 12
+      - 14
+      - 16
+      - 18
+      lhotse:
+        text_field: text
+        batch_duration: 80
+        quadratic_duration: 30
+        max_open_streams: 50
+        num_buckets: 30
+        buffer_size: 10000
+        shuffle_buffer_size: 10000
+        duration_bins:
+        - 2.92
+        - 3.474
+        - 3.924
+        - 4.335
+        - 4.728
+        - 5.11
+        - 5.487
+        - 5.872
+        - 6.288
+        - 6.696
+        - 7.128
+        - 7.62
+        - 8.208
+        - 8.934
+        - 9.883
+        - 10.56
+        - 11.22
+        - 11.88
+        - 12.51
+        - 13.05
+        - 13.59
+        - 14.13
+        - 14.64
+        - 15.17875
+        - 15.81
+        - 16.54
+        - 17.37
+        - 18.241
+        - 19.18
+      convert_canary_prompt_to_text: true
+      seed: trng
+      use_bucketing: false
+      canary_tokens_augment_ratio: 0.5
+      batch_size: 2
+      batch_duration: null
+      text_field: text
+    validation_ds:
+      manifest_filepath:
+      - /media/data/datasets/LibriSpeech/dev_clean_10.json
+      - /media/data/datasets/LibriSpeech/dev_clean_10.json
+      global_batch_size: 2
+      micro_batch_size: 2
+      shuffle: false
+      num_workers: 0
+      pin_memory: true
+      max_seq_length: 512
+      min_seq_length: 1
+      drop_last: false
+      context_key: input
+      label_key: output
+      add_eos: true
+      end_string: '[EOG]'
+      add_sep: false
+      add_bos: true
+      separate_prompt_and_response_with_newline: false
+      write_predictions_to_file: false
+      output_file_path_prefix: null
+      truncation_field: context
+      index_mapping_dir: null
+      prompt_template: '[INST]
+
+        <<SYS>>
+
+        Please answer the following based on the previous speech feature.
+
+        <</SYS>>
+
+
+        {input}[/INST] {output}'
+      tokens_to_generate: 128
+      sample_rate: 16000
+      log_every_n_steps: 10
+      metric:
+        name: wer
+        average: null
+        num_classes: null
+      convert_canary_prompt_to_text: true
+      random_context_prob: 0.5
+      use_lhotse: true
+      batch_size: 2
+      use_bucketing: false
+      text_field: text
+  nsys_profile:
+    enabled: false
+    start_step: 10
+    end_step: 10
+    ranks:
+    - 0
+    gen_shape: false
+  optim:
+    name: distributed_fused_adam
+    lr: 0.0001
+    weight_decay: 0.01
+    betas:
+    - 0.9
+    - 0.98
+    sched:
+      name: CosineAnnealing
+      warmup_steps: 50
+      min_lr: 0.0
+      constant_steps: 0
+      monitor: val_loss
+      reduce_on_plateau: false
+    bucket_cap_mb: 200
+    overlap_grad_sync: false
+    contiguous_grad_buffer: true
+  rotary_base: 10000.0
+  precision: 16
+  target: nemo.collections.multimodal.speech_llm.models.modular_models.CrossAttendModularAudioGPTModel
+  nemo_version: 1.21.0
+  pretrained_audio_model: /workspace/nemo/works/zhehuaic_works/llm/canary-1b.nemo
+  freeze_llm: false
+  freeze_audio_encoder: false
+  freeze_modality_adapter: false
+  load_audio_encoder: true
+  restore_from_path: /workspace/nemo/works/mod_speech_llm/models/llm/llm/tiny_llama.nemo
+  save_nemo_on_validation_end: false
+  answer_only_loss: true
+  perception:
+    target: nemo.collections.multimodal.speech_llm.modules.perception.AudioPerceptionModule
+    use_multi_layer_feat: false
+    xattn:
+      target: nemo.collections.multimodal.speech_llm.modules.perception.ProjectTransformerCrossAttention
+      num_attention_heads: 8
+      attn_score_dropout: 0.1
+      attn_layer_dropout: 0.1
+      ffn_dropout: 0.1
+      hidden_act: relu
+      pre_ln: true
+      pre_ln_final_layer_norm: true
+      xformer_num_layers: 1
+    multi_layer_feat:
+      layer_idx_list:
+      - 0
+      - 6
+      - 12
+      - 16
+      - -1
+      aggregator:
+        mode: cat
+        pooling: avg
+        align_mode: max
+    modality_adapter:
+      _target_: nemo.collections.asr.modules.ConformerEncoder
+      feat_in: 1024
+      feat_out: -1
+      n_layers: 2
+      d_model: 512
+      subsampling: dw_striding
+      subsampling_factor: 8
+      subsampling_conv_channels: 256
+      causal_downsampling: false
+      reduction: striding
+      reduction_position: -1
+      reduction_factor: 8
+      ff_expansion_factor: 4
+      self_attention_model: rel_pos
+      n_heads: 8
+      att_context_size:
+      - -1
+      - -1
+      att_context_style: regular
+      xscaling: true
+      untie_biases: true
+      pos_emb_max_len: 5000
+      conv_kernel_size: 9
+      conv_norm_type: batch_norm
+      conv_context_size: null
+      dropout: 0.1
+      dropout_pre_encoder: 0.1
+      dropout_emb: 0.0
+      dropout_att: 0.1
+      stochastic_depth_drop_prob: 0.0
+      stochastic_depth_mode: linear
+      stochastic_depth_start_layer: 1
+    spec_augment:
+      _target_: nemo.collections.asr.modules.SpectrogramAugmentation
+      freq_masks: 2
+      time_masks: 10
+      freq_width: 27
+      time_width: 0.05
+    add_sep: true
+    is_canary: true
+    is_ctc: false
+    greedy_decoding_overwrite: true
+    preprocessor:
+      _target_: nemo.collections.asr.modules.AudioToMelSpectrogramPreprocessor
+      sample_rate: 16000
+      normalize: per_feature
+      window_size: 0.025
+      window_stride: 0.01
+      window: hann
+      features: 128
+      n_fft: 512
+      log: true
+      frame_splicing: 1
+      dither: 1.0e-05
+      pad_to: 0
+      pad_value: 0.0
+    encoder:
+      _target_: nemo.collections.asr.modules.ConformerEncoder
+      feat_in: 128
+      feat_out: -1
+      n_layers: 24
+      d_model: 1024
+      subsampling: dw_striding
+      subsampling_factor: 8
+      subsampling_conv_channels: 256
+      causal_downsampling: false
+      reduction: null
+      reduction_position: null
+      reduction_factor: 1
+      ff_expansion_factor: 4
+      self_attention_model: rel_pos
+      n_heads: 8
+      att_context_size:
+      - -1
+      - -1
+      xscaling: false
+      untie_biases: true
+      pos_emb_max_len: 5000
+      conv_kernel_size: 9
+      conv_norm_type: batch_norm
+      conv_context_size: null
+      dropout: 0.1
+      dropout_pre_encoder: 0.1
+      dropout_emb: 0.0
+      dropout_att: 0.1
+    output_dim: 2048
+  use_flash_attention: true

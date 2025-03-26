@@ -1,0 +1,108 @@
+[NeMo I 2024-05-02 19:23:06 exp_manager:862] TensorboardLogger has been set up
+[NeMo W 2024-05-02 19:23:06 exp_manager:972] The checkpoint callback was told to monitor a validation value and trainer's max_steps was set to 1000000. Please ensure that max_steps will run for at least 1 epochs to ensure that checkpointing will not error out.
+[NeMo I 2024-05-02 19:23:06 modular_audio_gpt_train:65] Resuming training from checkpoint: None
+[NeMo I 2024-05-02 19:23:06 modular_models_t5:782] Loading pretrained audio model from local file: /workspace/nemo/works/zhehuaic_works/llm/canary-1b.nemo
+[NeMo I 2024-05-02 19:23:13 mixins:196] _setup_tokenizer: detected an aggregate tokenizer
+[NeMo I 2024-05-02 19:23:13 mixins:330] Tokenizer SentencePieceTokenizer initialized with 32 tokens
+[NeMo I 2024-05-02 19:23:13 mixins:330] Tokenizer SentencePieceTokenizer initialized with 1024 tokens
+[NeMo I 2024-05-02 19:23:13 mixins:330] Tokenizer SentencePieceTokenizer initialized with 1024 tokens
+[NeMo I 2024-05-02 19:23:13 mixins:330] Tokenizer SentencePieceTokenizer initialized with 1024 tokens
+[NeMo I 2024-05-02 19:23:13 mixins:330] Tokenizer SentencePieceTokenizer initialized with 1024 tokens
+[NeMo I 2024-05-02 19:23:13 aggregate_tokenizer:72] Aggregate vocab size: 4128
+[NeMo W 2024-05-02 19:23:13 modelPT:165] If you intend to do training or fine-tuning, please call the ModelPT.setup_training_data() method and provide a valid configuration file to setup the train data loader.
+    Train config : 
+    tarred_audio_filepaths: null
+    manifest_filepath: null
+    sample_rate: 16000
+    shuffle: true
+    batch_size: null
+    num_workers: 8
+    use_lhotse: true
+    max_duration: 40
+    pin_memory: true
+    use_bucketing: false
+    bucket_duration_bins: null
+    num_buckets: 1
+    text_field: answer
+    lang_field: target_lang
+    batch_duration: 360
+    quadratic_duration: 15
+    bucket_buffer_size: 20000
+    shuffle_buffer_size: 10000
+    
+[NeMo W 2024-05-02 19:23:13 modelPT:172] If you intend to do validation, please call the ModelPT.setup_validation_data() or ModelPT.setup_multiple_validation_data() method and provide a valid configuration file to setup the validation data loader(s). 
+    Validation config : 
+    manifest_filepath: null
+    sample_rate: 16000
+    batch_size: 8
+    shuffle: false
+    num_workers: 0
+    pin_memory: true
+    tarred_audio_filepaths: null
+    use_lhotse: true
+    text_field: answer
+    lang_field: target_lang
+    use_bucketing: false
+    
+[NeMo W 2024-05-02 19:23:13 modelPT:178] Please call the ModelPT.setup_test_data() or ModelPT.setup_multiple_test_data() method and provide a valid configuration file to setup the test data loader(s).
+    Test config : 
+    manifest_filepath: null
+    sample_rate: 16000
+    batch_size: 32
+    shuffle: false
+    num_workers: 0
+    pin_memory: true
+    tarred_audio_filepaths: null
+    use_lhotse: true
+    text_field: answer
+    lang_field: target_lang
+    use_bucketing: false
+    
+[NeMo I 2024-05-02 19:23:13 features:289] PADDING: 0
+[NeMo E 2024-05-02 19:23:42 common:523] Model instantiation failed!
+    Target class:	nemo.collections.asr.models.aed_multitask_models.EncDecMultiTaskModel
+    Error(s):	Error in call to target 'nemo.collections.asr.modules.conformer_encoder.ConformerEncoder':
+    BdbQuit()
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+        return _target_(*args, **kwargs)
+      File "/workspace/nemo/NeMo_merge/nemo/collections/asr/modules/conformer_encoder.py", line 411, in __init__
+        layer = ConformerLayer(
+      File "/workspace/nemo/NeMo_merge/nemo/collections/asr/parts/submodules/conformer_modules.py", line 136, in __init__
+        self.feed_forward2 = ConformerFeedForward(d_model=d_model, d_ff=d_ff, dropout=dropout)
+      File "/workspace/nemo/NeMo_merge/nemo/collections/asr/parts/submodules/conformer_modules.py", line 397, in __init__
+        self.linear2 = nn.Linear(d_ff, d_model)
+      File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/linear.py", line 101, in __init__
+        self.reset_parameters()
+      File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/linear.py", line 107, in reset_parameters
+        init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+      File "/usr/local/lib/python3.10/dist-packages/torch/nn/init.py", line 427, in kaiming_uniform_
+        with torch.no_grad():
+      File "/usr/local/lib/python3.10/dist-packages/torch/nn/init.py", line 427, in kaiming_uniform_
+        with torch.no_grad():
+      File "/usr/lib/python3.10/bdb.py", line 90, in trace_dispatch
+        return self.dispatch_line(frame)
+      File "/usr/lib/python3.10/bdb.py", line 115, in dispatch_line
+        if self.quitting: raise BdbQuit
+    bdb.BdbQuit
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/workspace/nemo/NeMo_merge/nemo/core/classes/common.py", line 502, in from_config_dict
+        instance = imported_cls(cfg=config, trainer=trainer)
+      File "/workspace/nemo/NeMo_merge/nemo/collections/asr/models/aed_multitask_models.py", line 139, in __init__
+        self.encoder = EncDecMultiTaskModel.from_config_dict(self.cfg.encoder)
+      File "/workspace/nemo/NeMo_merge/nemo/core/classes/common.py", line 485, in from_config_dict
+        instance = hydra.utils.instantiate(config=config)
+      File "/usr/local/lib/python3.10/dist-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+        return instantiate_node(
+      File "/usr/local/lib/python3.10/dist-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+        return _call_target(_target_, partial, args, kwargs, full_key)
+      File "/usr/local/lib/python3.10/dist-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+        raise InstantiationException(msg) from e
+    hydra.errors.InstantiationException: Error in call to target 'nemo.collections.asr.modules.conformer_encoder.ConformerEncoder':
+    BdbQuit()
+    
+[NeMo I 2024-05-02 19:23:42 modular_models_t5:788] Fail in loading it with ASRModel. Try again with SpeechEncDecSelfSupervisedModel.
+[NeMo I 2024-05-02 19:23:42 modular_models_t5:790] Loading pretrained audio model from local file: /workspace/nemo/works/zhehuaic_works/llm/canary-1b.nemo
